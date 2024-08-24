@@ -18,7 +18,7 @@ export const Search = React.memo(function Search() {
     return (
         <WebLayout>
             {/* <SearchArea /> */}
-            <div className='grid gap-2'>
+            <div className='grid gap-2 bg-white p-4 rounded-md'>
                 <Selector
                     title="時間"
                     items={[
