@@ -11,8 +11,8 @@ export const SearchArea = React.memo<Props>(function SearchArea({
     const [searchTerm, setSearchTerm] = useState('');
 
     return (
-        <div className="w-full flex justify-center p-2 mt-12">
-            <div className="relative w-full max-w-lg">
+        <div className="w-full flex justify-center p-2">
+            <div className="relative w-full">
                 <input
                     type="text"
                     placeholder={placeholder}
