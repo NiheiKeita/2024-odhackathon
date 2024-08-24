@@ -34,14 +34,14 @@ export const Card2 = React.memo<Props>(function Card1({
             />
 
             {/* Card Content */}
-            <div className="relative z-10 p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
+            <div className="relative z-10 p-4 text-white bg-gradient-to-t from-black via-transparent to-black-translucent">
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-4xl font-bold truncate drop-shadow-2xl"
                         style={{
                             WebkitTextStrokeColor: "black",
                             WebkitTextStrokeWidth: "0.8px"
                         }}>{sportName}</h2>
-                    <span className="bg-blue-500 text-white text-base px-2 py-1 rounded-full">あと{currentParticipants}人</span>
+                    <span className="bg-blue-500 text-white text- px-2 py-1 rounded-full">あと{currentParticipants}人</span>
                     {/* <p className="text-sm">{currentParticipants} 人参加中</p> */}
                 </div>
 

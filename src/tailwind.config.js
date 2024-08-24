@@ -21,6 +21,7 @@ export default {
                     dark: '#0e7490',
                     reverse: '#292986',
                 },
+                'black-translucent': 'rgba(0, 0, 0, 0.2)'
             },
         },
     },
