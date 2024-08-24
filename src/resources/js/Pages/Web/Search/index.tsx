@@ -66,6 +66,7 @@ export const Search = React.memo(function Search() {
                         deadline={item.deadline}
                         fee={item.fee}
                         tags={item.tags}
+                        topLabel={item.topLabel}
                         onJoinClick={onJoinClick}
                     />
                 })}

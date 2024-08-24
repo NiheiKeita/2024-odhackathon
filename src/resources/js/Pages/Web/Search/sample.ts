@@ -16,8 +16,9 @@ export const items = [
     "currentParticipants": 10,
     "location": "東京ドーム",
     "nearestStation": "水道橋駅",
-    "deadline": "2024年8月28日",
+    "deadline": "8月28日",
     "fee": "500円",
+    "topLabel": "初心者OK",
     "tags": ["初心者歓迎", "女性限定"]
   },
   {
@@ -28,8 +29,9 @@ export const items = [
     "currentParticipants": 20,
     "location": "日本武道館",
     "nearestStation": "九段下駅",
-    "deadline": "2024年9月1日",
+    "deadline": "9月1日",
     "fee": "800円",
+    "topLabel": "上級者のみ",
     "tags": ["経験者優遇", "男性限定"]
   },
   {
@@ -40,8 +42,9 @@ export const items = [
     "currentParticipants": 5,
     "location": "代々木公園",
     "nearestStation": "代々木駅",
-    "deadline": "2024年9月7日",
+    "deadline": "9月7日",
     "fee": "600円",
+    "topLabel": "わいわい",
     "tags": ["初心者歓迎", "ペア参加可"]
   }
 ];

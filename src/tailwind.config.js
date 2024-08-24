@@ -17,9 +17,9 @@ export default {
             colors: {
                 'theme': {
                     light: '#67e8f9',
-                    DEFAULT: '#292986',
+                    DEFAULT: '#1E8466',
                     dark: '#0e7490',
-                    default: '#292986',
+                    reverse: '#292986',
                 },
             },
         },
