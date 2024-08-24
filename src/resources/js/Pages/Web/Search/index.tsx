@@ -6,8 +6,8 @@ import WebLayout from '@/Layouts/WebLayout';
 import ModalView from '@/Components/ModalView';
 import HouseModal from './components/HouseModal';
 import { items } from './sample';
-import Card from '@/Components/Card';
 import Selector from '@/Components/Selector';
+import { Card2 } from '@/Components/Card2';
 
 export const Search = React.memo(function Search() {
     const { handleHouseClick, selectHouseId, setSelectHouseId, handleModalClose } = useSearch()
@@ -55,7 +55,7 @@ export const Search = React.memo(function Search() {
             </div>
             <div className="grid grid-cols-1 gap-4 place-items-center mt-5">
                 {items.map((item) => {
-                    return <Card
+                    return <Card2
                         key={item.key}
                         sportImage={item.sportImage}
                         sportName={item.sportName}
@@ -66,7 +66,6 @@ export const Search = React.memo(function Search() {
                         deadline={item.deadline}
                         fee={item.fee}
                         tags={item.tags}
-                        topLabel={item.topLabel}
                         onJoinClick={onJoinClick}
                     />
                 })}

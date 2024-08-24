@@ -24,7 +24,7 @@ export const items = [
   {
     "key": 2,
     "sportImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-EJckAPGRk89ITu90misRropN5KyNg4HcH8abGq0Alx-3UovSoZ1npuoBLnHy3d7Z20n3TWcSrRCGe5GZfJNFNqtM-Z2SP_I_6GKymgDprPQVVWviUCX6YgW1qIWqlxR8-nfkWOxuT_KU/s800/sport_basketball.png",
-    "sportName": "バスケットボール",
+    "sportName": "バスケット",
     "dateTime": "9月5日 18:00",
     "currentParticipants": 20,
     "location": "日本武道館",

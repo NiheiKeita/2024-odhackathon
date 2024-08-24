@@ -13,7 +13,6 @@ type Props = {
     deadline: string;
     fee: string;
     tags: string[];
-    topLabel: string,
     onJoinClick: () => void;
 };
 
@@ -27,7 +26,6 @@ export const Card = React.memo<Props>(function Card({
     deadline,
     fee,
     tags,
-    topLabel,
     onJoinClick,
 }) {
 
