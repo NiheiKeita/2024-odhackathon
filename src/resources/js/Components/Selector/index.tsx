@@ -3,12 +3,14 @@ import { useApplication } from './hooks';
 
 type Props = {
     items: string[],
+    placeholder?: string
     title: string
 }
 
 export const Selector = React.memo<Props>(function Selector({
     title,
-    items
+    items,
+    placeholder
 }) {
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -33,7 +35,7 @@ export const Selector = React.memo<Props>(function Selector({
             <h2 className="text-lg font-semibold mb-2">{title}</h2>
             <input
                 type="text"
-                placeholder="Select an option..."
+                placeholder={placeholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFocus={handleFocus}
@@ -41,7 +43,7 @@ export const Selector = React.memo<Props>(function Selector({
                 className="w-full p-2 border border-gray-300 rounded-md"
             />
             {isOpen && (
-                <ul className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
+                <ul className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg">
                     {filteredItems.length > 0 ? (
                         filteredItems.map((item, index) => (
                             <li

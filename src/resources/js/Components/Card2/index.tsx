@@ -51,7 +51,12 @@ export const Card2 = React.memo<Props>(function Card1({
                             WebkitTextStrokeColor: "black",
                             WebkitTextStrokeWidth: "0.3px"
                         }}>{dateTime}</p>
-                    <span className="border-gray-50  bg-theme text-gray-50 text-xs px-2 py-1 rounded-full w-fit">{tags[0]}</span>
+                    <div className='flex gap-1'>
+                        {tags.map((tag, index) => {
+                            return <span key={index} className="border-gray-50  bg-theme text-gray-50 text-xs px-2 py-1 rounded-full w-fit">{tag}</span>
+                        })}
+                    </div>
+
                 </div>
 
                 <div className="flex justify-between text-sm mb-1">
