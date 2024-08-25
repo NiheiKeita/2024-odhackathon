@@ -31,15 +31,24 @@ export const Register = React.memo(function Register() {
                 <Selector
                     items={['Tokyo', 'Osaka', 'Nagoya']} title="" placeholder={'例) 市民公園グラウンド'} />
 
-                <div
+                {/* <div
                     style={{
-                        backgroundImage: `url(${soccerImage})`,
+                        backgroundImage: `url(background-image: url(&quot;/resources/js/Pages/Web/Register/img/soccer.jpg&quot;))`,
                         backgroundSize: 'cover', // 画像を全体に表示
                         backgroundPosition: 'center', // 中央に配置
                         width: '300px',
                         height: '200px',
                     }}
+                /> */}
+                <div
+                    className=" inset-0 bg-cover bg-center w-full h-52"
+                    style={{ backgroundImage: "url(/resources/js/Pages/Web/Register/img/map.png)", filter: "brightness(100%)" }}
                 />
+                <p className='text-gray-700 text-sm text-right'>地理院地図（国土地理院）を利用して表示</p>
+                {/* <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${soccerImage})`, filter: 'brightness(80%)' }}
+                /> */}
             </div>
 
             {/* Image Upload */}
@@ -95,7 +104,7 @@ export const Register = React.memo(function Register() {
             >
                 登録
             </button>
-        </div>
+        </div >
     );
 })
 export default Register
