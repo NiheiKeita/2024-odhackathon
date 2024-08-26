@@ -23,7 +23,7 @@ jobs:
       - name: Generate key
         run: |
           docker compose exec app php artisan key:generate
-      - name: npm install
+      - name: npm run install
         run: |
           docker compose exec app npm run install
       - name: npm build
