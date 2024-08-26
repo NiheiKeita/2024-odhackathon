@@ -17,12 +17,15 @@ jobs:
       - name: composer install
         run: |
           docker compose exec app composer install
+      - name: Copy .env
+        run: |
+          docker compose exec app php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Generate key
         run: |
           docker compose exec app php artisan key:generate
       - name: npm install
         run: |
-          docker compose exec app npm install
+          docker compose exec app npm run install
       - name: npm build
         run: |
           docker compose exec app npm run build
