@@ -25,10 +25,10 @@ jobs:
           docker compose exec app php artisan key:generate
       - name: npm run install
         run: |
-          docker compose exec app npm run install
+          docker compose exec app npm run all-install
       - name: npm build
         run: |
-          docker compose exec app npm run build
+          docker compose exec app npm run all-build
 # jobs:
 #   deploy:
 #     runs-on: ubuntu-latest

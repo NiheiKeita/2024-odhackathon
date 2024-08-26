@@ -6,7 +6,7 @@
     "prepare": "husky",
     "lint": "npm --prefix ./src run lint",
     "type-check": "npm --prefix ./src run type-check",
-    "install": "npm --prefix ./src install",
-    "build": "npm --prefix ./src run build"
+    "all-install": "npm --prefix ./src install",
+    "all-build": "npm --prefix ./src run build"
   }
 }
