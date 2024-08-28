@@ -1,6 +1,9 @@
 name: deploy to production-xserver
 
-on: [pull_request]
+on:
+  push:
+    tags:
+      - 'stg.v.*'
 
 jobs:
   FTP-Deploy-Action:
