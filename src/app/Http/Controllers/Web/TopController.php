@@ -13,7 +13,7 @@ class TopController extends Controller
     {
         $codeCheck = new NotionApi();
         $codeCheck->getBuildings();
-        dd($codeCheck->getBuildings());
+        // dd($codeCheck->getBuildings());
         return Inertia::render('Web/Top');
     }
 }
