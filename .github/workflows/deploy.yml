@@ -14,19 +14,19 @@ jobs:
         working-directory: ./src
     steps:
       - uses: actions/checkout@v2
-      - name: dokcer-compose up
-        run: |
-          # docker compose build
-          docker compose up -d
-      - name: composer install
-        run: |
-          docker compose exec app composer install
-      - name: Copy .env
-        run: |
-          docker compose exec app php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Generate key
-        run: |
-          docker compose exec app php artisan key:generate
+      # - name: dokcer-compose up
+      #   run: |
+      #     # docker compose build
+      #     docker compose up -d
+      # - name: composer install
+      #   run: |
+      #     docker compose exec app composer install
+      # - name: Copy .env
+      #   run: |
+      #     docker compose exec app php -r "file_exists('.env') || copy('.env.example', '.env');"
+      # - name: Generate key
+      #   run: |
+      #     docker compose exec app php artisan key:generate
       - name: npm run install
         run: |
           docker compose exec app npm install
@@ -39,13 +39,13 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: toupload
-        env:
+          local-dir: ./src
+        # env:
           # FTP_SERVER: ${{ secrets.FTP_SERVER }}
           # FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           # FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          LOCAL_DIR: ./src
-          REMOTE_DIR: ./
+          # LOCAL_DIR: ./src
+          # REMOTE_DIR: ./
   # FTP-Deploy-Action:
   #   name: FTP-Deploy-Action
   #   runs-on: ubuntu-latest
