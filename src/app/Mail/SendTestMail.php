@@ -27,8 +27,8 @@ class SendTestMail extends Mailable
     public function build()
     {
         return $this->view('emails.test')
-                ->to('XXXXX@XXXXX.jp', '鈴木太郎')
-                ->from('XXX@XXXX', '佐藤一郎')
+                ->to('keita.nihei.1996.05.29@gmail.com', 'nihei')
+                ->from('web@qboad.com', 'WEB')
                 ->subject('テストメールです。');
     }
 }
