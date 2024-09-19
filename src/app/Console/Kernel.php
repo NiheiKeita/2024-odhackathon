@@ -14,11 +14,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         // $schedule->command('queue:restart')->everyMinute();
-        $schedule->command('queue:listen')->everyMinute();
+        // $schedule->command('queue:listen')->everyMinute();
 
-        // $schedule->command('queue:restart')->everyTenMinutes();
+        $schedule->command('queue:restart')->everyMinute();
 
-        // $schedule->command('queue:work --tries=3')->everyMinute()->withoutOverlapping();
+        $schedule->command('queue:work')->everyMinute();
     }
 
     /**
