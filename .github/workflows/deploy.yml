@@ -13,7 +13,7 @@ jobs:
       run:
         working-directory: ./src
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # - name: dokcer-compose up
       #   run: |
       #     docker compose up -d
@@ -33,12 +33,17 @@ jobs:
       #   run: |
       #     docker compose exec app npm run build
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./src/
+        # with:
+        #   ftp-server: ${{ secrets.FTP_SERVER }}
+        #   ftp-username: ${{ secrets.FTP_USERNAME }}
+        #   ftp-password: ${{ secrets.FTP_PASSWORD }}
+        #   local-dir: ./src/
         # env:
           # FTP_SERVER: ${{ secrets.FTP_SERVER }}
           # FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
