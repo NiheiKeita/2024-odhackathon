@@ -12,7 +12,7 @@ class TopController extends Controller
 {
     public function index(): Response
     {
-        SendTestEmail::dispatch("ss", "sssss");
+        // SendTestEmail::dispatch("ss", "sssss");
         // $codeCheck = new NotionApi();
         // $codeCheck->getBuildings();
         // dd($codeCheck->getBuildings());
