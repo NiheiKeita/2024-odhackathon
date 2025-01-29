@@ -1,9 +1,10 @@
 name: deploy
 
-on:
-  push:
-    tags:
-      - 'stg.v.*'
+on: [pull_request]
+# on:
+#   push:
+#     tags:
+#       - 'stg.v.*'
 
 jobs:
   deploy:
@@ -12,34 +13,44 @@ jobs:
       run:
         working-directory: ./src
     steps:
-      - uses: actions/checkout@v2
-      - name: dokcer-compose up
-        run: |
-          # docker compose build
-          docker compose up -d
-      - name: composer install
-        run: |
-          docker compose exec app composer install
-      - name: Copy .env
-        run: |
-          docker compose exec app php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Generate key
-        run: |
-          docker compose exec app php artisan key:generate
-      - name: npm run install
-        run: |
-          docker compose exec app npm install
-      - name: npm build
-        run: |
-          docker compose exec app npm run build
+      - uses: actions/checkout@v4
+      # - name: dokcer-compose up
+      #   run: |
+      #     docker compose up -d
+      # - name: composer install
+      #   run: |
+      #     docker compose exec app composer install
+      # - name: Copy .env
+      #   run: |
+      #     docker compose exec app php -r "file_exists('.env') || copy('.env.example', '.env');"
+      # - name: Generate key
+      #   run: |
+      #     docker compose exec app php artisan key:generate
+      # - name: npm run install
+      #   run: |
+      #     docker compose exec app npm install
+      # - name: npm build
+      #   run: |
+      #     docker compose exec app npm run build
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          LOCAL_DIR: ./src
-          REMOTE_DIR: ./
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./src/
+          server-dir: ./src/
+        # with:
+        #   ftp-server: ${{ secrets.FTP_SERVER }}
+        #   ftp-username: ${{ secrets.FTP_USERNAME }}
+        #   ftp-password: ${{ secrets.FTP_PASSWORD }}
+        #   local-dir: ./src/
+        # env:
+          # FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          # FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          # FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          # LOCAL_DIR: ./src
+          # REMOTE_DIR: ./
   # FTP-Deploy-Action:
   #   name: FTP-Deploy-Action
   #   runs-on: ubuntu-latest
