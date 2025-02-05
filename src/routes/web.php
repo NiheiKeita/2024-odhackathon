@@ -13,6 +13,7 @@ use App\Http\Controllers\Web\HouseInquiryController;
 use App\Http\Controllers\Web\MyPageController;
 use App\Http\Controllers\Web\SearchController;
 use App\Http\Controllers\Web\TopController;
+use App\Http\Middleware\VerifyCsrfToken;
 use App\Http\Controllers\MailController;
 
 /*
@@ -59,6 +60,6 @@ Route::middleware('guest.admin')->group(function () {
     Route::post('admin/users/add', [RegisteredUserController::class, 'store']);
 });
 
-Route::post('mail', [MailController::class, 'add'])->name('web.application');
+Route::post('mail', [MailController::class, 'add'])->withoutMiddleware(VerifyCsrfToken::class)->name('web.application');
 
 require __DIR__ . '/auth.php';
