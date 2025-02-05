@@ -60,6 +60,6 @@ Route::middleware('guest.admin')->group(function () {
     Route::post('admin/users/add', [RegisteredUserController::class, 'store']);
 });
 
-Route::post('mail', [MailController::class, 'add'])->withoutMiddleware(VerifyCsrfToken::class)->name('web.application');
+Route::post('mail', [MailController::class, 'add'])->withoutMiddleware(VerifyCsrfToken::class);
 
 require __DIR__ . '/auth.php';
