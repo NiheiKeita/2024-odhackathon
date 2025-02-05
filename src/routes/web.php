@@ -13,8 +13,8 @@ use App\Http\Controllers\Web\HouseInquiryController;
 use App\Http\Controllers\Web\MyPageController;
 use App\Http\Controllers\Web\SearchController;
 use App\Http\Controllers\Web\TopController;
-use App\Http\Middleware\VerifyCsrfToken;
 use App\Http\Controllers\MailController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 
 /*
 |--------------------------------------------------------------------------
